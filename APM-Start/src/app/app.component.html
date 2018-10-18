@@ -7,7 +7,7 @@
                     <a [routerLink]="['/welcome']">Home</a>
                 </li>
                 <li>
-                    <a [routerLink]="['/product']">Product List</a>
+                    <a [routerLink]="['/products']">Product List</a>
                 </li>
                 <li>
                     <a>Add Product</a>
@@ -20,7 +20,10 @@
                 <li>
                     <a>Show Messages</a>
                 </li>
-                <li *ngIf="!authService.isLoggedIn()">
+                <li
+                    *ngIf="!authService.isLoggedIn()"
+                    [routerLink]="['/login']"
+                    >
                     <a>Log In</a>
                 </li>
                 <li *ngIf="authService.isLoggedIn()">
