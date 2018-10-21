@@ -14,7 +14,10 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     SharedModule,
     RouterModule.forChild([
-      { path: 'products', component: ProductListComponent }
+      { path: 'products', component: ProductListComponent },
+      // When I added these the welcome component stopped appearing
+      { path: ':id', component: ProductDetailComponent },
+      { path: 'products/:id/edit', component: ProductEditComponent }
     ])
   ],
   declarations: [
